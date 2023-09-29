@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { WeatherData } from "@/types";
+import { getUniqueSortedCities } from "@/utilities";
+import { CityData, WeatherData } from "@/types";
 
 import weatherService from "@/services/weatherService";
 
@@ -10,8 +11,11 @@ export const useCities = () => {
     return data;
   };
 
-  return useQuery<WeatherData[], Error>({
-    queryFn: fetchWeatherData,
+  return useQuery<CityData[], Error>({
+    queryFn: async () => {
+      const data = await fetchWeatherData();
+      return getUniqueSortedCities(data);
+    },
     queryKey: ["cities"],
   });
 };
