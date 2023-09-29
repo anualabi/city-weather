@@ -1,11 +1,13 @@
 import { useEffect, useLayoutEffect } from "react";
 import { StyleSheet, View } from "react-native";
 
+import { AppStackScreenProps } from "@/navigation/AppNavigator";
 import LanguageSelector from "@/components/LanguageSelector";
-import { SettingsScreenProps } from "@/navigation/AppNavigator";
 import Text from "@/components/Text";
 import { translate as t } from "@/i18n";
 import { useTranslation } from "@/contexts/TranslationContext";
+
+interface SettingsScreenProps extends AppStackScreenProps<"Settings"> {}
 
 export default function SettingsScreen({ navigation }: SettingsScreenProps) {
   const { currentLanguage } = useTranslation();

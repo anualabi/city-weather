@@ -2,13 +2,15 @@ import { useLayoutEffect } from "react";
 import { StyleSheet, View } from "react-native";
 import { Image } from "expo-image";
 
-import { CityDetailsScreenProps } from "@/navigation/AppNavigator";
+import { AppStackScreenProps } from "@/navigation/AppNavigator";
 import ErrorMessage from "@/components/ErrorMessage";
 import ListItem from "@/components/ListItem";
 import Loader from "@/components/Loader";
 import Text from "@/components/Text";
 import { translate as t } from "@/i18n";
 import { useCityDetails } from "@/hooks/useWeather";
+
+interface CityDetailsScreenProps extends AppStackScreenProps<"CityDetails"> {}
 
 export default function CityDetailsScreen({
   navigation,

@@ -1,12 +1,14 @@
 import { useCallback, useState } from "react";
 import { FlatList, ImageBackground, StyleSheet } from "react-native";
 
+import { AppStackScreenProps } from "@/navigation/AppNavigator";
 import ErrorMessage from "@/components/ErrorMessage/";
-import { HomeScreenProps } from "@/navigation/AppNavigator";
 import ListItem from "@/components/ListItem";
 import Loader from "@/components/Loader";
 import { translate as t } from "@/i18n";
 import { useCities } from "@/hooks/useWeather";
+
+interface HomeScreenProps extends AppStackScreenProps<"Home"> {}
 
 export default function HomeScreen({ navigation }: HomeScreenProps) {
   const { data, isError, isLoading, refetch } = useCities();
