@@ -10,4 +10,17 @@ export type WeatherData = {
   temp: number;
 };
 
-export type IconName = "chevron-right";
+export type TemperatureInfo = {
+  time: string;
+  degrees: string;
+};
+
+export type FormattedWeatherData = {
+  day: string;
+  date: string;
+  month: string;
+  year: number;
+  temperatures: TemperatureInfo[];
+};
+
+export type IconName = "arrow-left" | "chevron-right";

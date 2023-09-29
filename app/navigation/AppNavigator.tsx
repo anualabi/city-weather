@@ -4,7 +4,9 @@ import {
   createNativeStackNavigator,
 } from "@react-navigation/native-stack";
 
-import HomeScreen from "@/screens/HomeScreen";
+import CitiesScreen from "@/screens/HomeScreen";
+import CityDetailsScreen from "@/screens/CityDetailsScreen";
+import Icon from "@/components/Icon";
 
 type RootStackParamList = {
   Cities: undefined;
@@ -12,23 +14,41 @@ type RootStackParamList = {
   Settings: { name: string };
 };
 
-export type HomeScreenProps = NativeStackScreenProps<
+export type CitiesScreenProps = NativeStackScreenProps<
   RootStackParamList,
   "Cities"
 >;
 
+export type CityDetailsScreenProps = NativeStackScreenProps<
+  RootStackParamList,
+  "CityDetails"
+>;
+
 const Stack = createNativeStackNavigator<RootStackParamList>();
+
+const getBackIcon = (navigation: { goBack: () => void }) => {
+  return () => <Icon name="arrow-left" onPress={() => navigation.goBack()} />;
+};
 
 export default function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        screenOptions={{
+        screenOptions={({ navigation }) => ({
+          headerBackTitleVisible: false,
+          headerLeft: getBackIcon(navigation),
           headerTitleAlign: "center",
           headerTitleStyle: { fontSize: 20 },
-        }}
+        })}
       >
-        <Stack.Screen name="Cities" component={HomeScreen} />
+        <Stack.Screen
+          name="Cities"
+          component={CitiesScreen}
+          options={{
+            headerLeft: undefined,
+          }}
+        />
+        <Stack.Screen name="CityDetails" component={CityDetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

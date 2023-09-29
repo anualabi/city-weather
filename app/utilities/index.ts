@@ -1,3 +1,4 @@
+import { getTemperatures } from "./getTemperatures";
 import { getUniqueSortedCities } from "./getUniqueSortedCities";
 
-export { getUniqueSortedCities };
+export { getTemperatures, getUniqueSortedCities };

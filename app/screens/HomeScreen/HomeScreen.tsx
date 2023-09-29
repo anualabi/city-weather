@@ -2,11 +2,12 @@ import { useCallback, useState } from "react";
 import { FlatList, ImageBackground, StyleSheet } from "react-native";
 
 import ErrorMessage from "@/components/ErrorMessage/";
+import { HomeScreenProps } from "@/navigation/AppNavigator";
 import ListItem from "@/components/ListItem";
 import Loader from "@/components/Loader";
 import { useCities } from "@/hooks/useWeather";
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }: HomeScreenProps) {
   const { data, isError, isLoading, refetch } = useCities();
   const [refreshing, setRefreshing] = useState(false);
 
@@ -34,7 +35,12 @@ export default function HomeScreen() {
         onRefresh={onRefresh}
         refreshing={refreshing}
         renderItem={({ item }) => (
-          <ListItem image={item.picture} showChevron title={item.name} />
+          <ListItem
+            image={item.picture}
+            onPress={() => navigation.navigate("CityDetails", item)}
+            showChevron
+            title={item.name}
+          />
         )}
       />
     </ImageBackground>
