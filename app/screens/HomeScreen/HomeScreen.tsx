@@ -7,7 +7,16 @@ import Loader from "@/components/Loader";
 import { useCities } from "@/hooks/useWeather";
 
 export default function HomeScreen() {
-  const { data, isError, isLoading } = useCities();
+  const { data, isError, isLoading, refetch } = useCities();
+  const [refreshing, setRefreshing] = useState(false);
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+
+    refetch().finally(() => {
+      setRefreshing(false);
+    });
+  }, [refetch]);
 
   if (isLoading) return <Loader animating={isLoading} />;
 
@@ -22,6 +31,8 @@ export default function HomeScreen() {
       <FlatList
         data={data}
         keyExtractor={(item) => item.name}
+        onRefresh={onRefresh}
+        refreshing={refreshing}
         renderItem={({ item }) => (
           <ListItem image={item.picture} showChevron title={item.name} />
         )}
