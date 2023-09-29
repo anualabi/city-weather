@@ -5,6 +5,7 @@ import ErrorMessage from "@/components/ErrorMessage/";
 import { HomeScreenProps } from "@/navigation/AppNavigator";
 import ListItem from "@/components/ListItem";
 import Loader from "@/components/Loader";
+import { translate as t } from "@/i18n";
 import { useCities } from "@/hooks/useWeather";
 
 export default function HomeScreen({ navigation }: HomeScreenProps) {
@@ -21,7 +22,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
 
   if (isLoading) return <Loader animating={isLoading} />;
 
-  if (isError) return <ErrorMessage message="Error" />;
+  if (isError) return <ErrorMessage message={t("citiesScreen.errorMessage")} />;
 
   return (
     <ImageBackground

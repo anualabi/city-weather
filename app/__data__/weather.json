@@ -1,0 +1,29 @@
+[
+  {
+    "date": "2023-09-29T20:00:00+00:00",
+    "city": {
+      "name": "Hong Kong",
+      "picture": "hong_kong.jpg"
+    },
+    "tempType": "C",
+    "temp": 24.39
+  },
+  {
+    "date": "2023-09-29T12:00:00+00:00",
+    "city": {
+      "name": "Hong Kong",
+      "picture": "hong_kong.jpg"
+    },
+    "tempType": "F",
+    "temp": 84.71
+  },
+  {
+    "date": "2023-09-29T04:00:00+00:00",
+    "city": {
+      "name": "Barcelona",
+      "picture": "barcelona.jpg"
+    },
+    "tempType": "C",
+    "temp": 23.02
+  }
+]

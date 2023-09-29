@@ -7,6 +7,8 @@ import {
 import CitiesScreen from "@/screens/HomeScreen";
 import CityDetailsScreen from "@/screens/CityDetailsScreen";
 import Icon from "@/components/Icon";
+import SettingsScreen from "@/screens/SettingsScreen";
+import { translate as t } from "@/i18n";
 
 type RootStackParamList = {
   Cities: undefined;
@@ -14,7 +16,7 @@ type RootStackParamList = {
   Settings: { name: string };
 };
 
-export type CitiesScreenProps = NativeStackScreenProps<
+export type HomeScreenProps = NativeStackScreenProps<
   RootStackParamList,
   "Cities"
 >;
@@ -24,10 +26,31 @@ export type CityDetailsScreenProps = NativeStackScreenProps<
   "CityDetails"
 >;
 
+export type SettingsScreenProps = NativeStackScreenProps<
+  RootStackParamList,
+  "Settings"
+>;
+
+type SettingsIconProps = {
+  navigation: NativeStackScreenProps<
+    RootStackParamList,
+    "Cities"
+  >["navigation"];
+};
+
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const getBackIcon = (navigation: { goBack: () => void }) => {
   return () => <Icon name="arrow-left" onPress={() => navigation.goBack()} />;
+};
+
+const getSettingsIcon = (navigation: SettingsIconProps["navigation"]) => {
+  return () => (
+    <Icon
+      name="cog"
+      onPress={() => navigation.navigate("Settings", { name: "Settings" })}
+    />
+  );
 };
 
 export default function AppNavigator() {
@@ -44,11 +67,14 @@ export default function AppNavigator() {
         <Stack.Screen
           name="Cities"
           component={CitiesScreen}
-          options={{
+          options={({ navigation }) => ({
             headerLeft: undefined,
-          }}
+            headerRight: getSettingsIcon(navigation),
+            headerTitle: t("citiesScreen.headerTitle"),
+          })}
         />
         <Stack.Screen name="CityDetails" component={CityDetailsScreen} />
+        <Stack.Screen name="Settings" component={SettingsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

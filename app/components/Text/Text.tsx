@@ -8,7 +8,10 @@ import {
   TextStyle,
 } from "react-native";
 
+import { translate, TxKeyPath } from "@/i18n";
+
 export interface TextProps extends RNTextProps {
+  tx?: TxKeyPath;
   text?: string;
   txOptions?: i18n.TranslateOptions;
   style?: StyleProp<TextStyle>;
@@ -16,11 +19,14 @@ export interface TextProps extends RNTextProps {
 }
 
 const Text = forwardRef<RNText, TextProps>(function Text(props, ref) {
-  const { txOptions, text, children, style, ...rest } = props;
+  const { tx, txOptions, text, children, style, ...rest } = props;
+
+  const i18nText = tx && translate(tx, txOptions);
+  const content = i18nText ?? text ?? children;
 
   return (
     <RNText ref={ref} {...rest} style={[styles.text, style]}>
-      {children}
+      {content}
     </RNText>
   );
 });

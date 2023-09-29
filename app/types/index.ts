@@ -23,4 +23,9 @@ export type FormattedWeatherData = {
   temperatures: TemperatureInfo[];
 };
 
-export type IconName = "arrow-left" | "chevron-right";
+export type IconName =
+  | "arrow-left"
+  | "chevron-right"
+  | "chevron-down"
+  | "cog"
+  | "close";

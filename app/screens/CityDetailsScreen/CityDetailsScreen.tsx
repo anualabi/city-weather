@@ -7,6 +7,7 @@ import ErrorMessage from "@/components/ErrorMessage";
 import ListItem from "@/components/ListItem";
 import Loader from "@/components/Loader";
 import Text from "@/components/Text";
+import { translate as t } from "@/i18n";
 import { useCityDetails } from "@/hooks/useWeather";
 
 export default function CityDetailsScreen({
@@ -24,7 +25,8 @@ export default function CityDetailsScreen({
 
   if (isLoading) return <Loader animating={isLoading} />;
 
-  if (isError) return <ErrorMessage message="Error" />;
+  if (isError)
+    return <ErrorMessage message={t("cityDetailsScreen.errorMessage")} />;
 
   const { temperatures } = data[0];
 
@@ -37,7 +39,7 @@ export default function CityDetailsScreen({
         style={styles.image}
       />
       <View style={styles.content}>
-        <Text>Temperatires</Text>
+        <Text style={styles.heading} tx="cityDetailsScreen.heading" />
         {temperatures.map(({ time, degrees }) => (
           <ListItem key={time} title={time} title2={degrees} />
         ))}
