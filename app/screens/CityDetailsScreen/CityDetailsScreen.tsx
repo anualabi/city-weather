@@ -3,10 +3,10 @@ import { StyleSheet, View } from "react-native";
 import { Image } from "expo-image";
 
 import { AppStackScreenProps } from "@/navigation/AppNavigator";
-import ErrorMessage from "@/components/ErrorMessage";
-import ListItem from "@/components/ListItem";
-import Loader from "@/components/Loader";
-import Text from "@/components/Text";
+import ErrorMessage from "@/components/ui/ErrorMessage";
+import ListItem from "@/components/ui/ListItem";
+import Loader from "@/components/ui/Loader";
+import Text from "@/components/ui/Text";
 import { translate as t } from "@/i18n";
 import { useCityDetails } from "@/hooks/useWeather";
 

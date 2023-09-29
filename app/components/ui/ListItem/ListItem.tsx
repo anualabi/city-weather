@@ -8,8 +8,8 @@ import {
   ViewStyle,
 } from "react-native";
 
-import Icon from "@/components/Icon";
-import Text from "@/components/Text";
+import Icon from "@/components/ui/Icon";
+import Text from "@/components/ui/Text";
 
 export interface ListItemProps {
   iconColor?: string;

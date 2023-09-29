@@ -2,9 +2,9 @@ import { useCallback, useState } from "react";
 import { FlatList, ImageBackground, StyleSheet } from "react-native";
 
 import { AppStackScreenProps } from "@/navigation/AppNavigator";
-import ErrorMessage from "@/components/ErrorMessage/";
-import ListItem from "@/components/ListItem";
-import Loader from "@/components/Loader";
+import ErrorMessage from "@/components/ui/ErrorMessage";
+import ListItem from "@/components/ui/ListItem";
+import Loader from "@/components/ui/Loader";
 import { translate as t } from "@/i18n";
 import { useCities } from "@/hooks/useWeather";
 

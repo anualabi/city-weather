@@ -5,7 +5,7 @@ import { StackScreenProps } from "@react-navigation/stack";
 import BackButton from "./BackButton";
 import CityDetailsScreen from "@/screens/CityDetailsScreen";
 import HomeScreen from "@/screens/HomeScreen";
-import Icon from "@/components/Icon";
+import Icon from "@/components/ui/Icon";
 import SettingsScreen from "@/screens/SettingsScreen";
 import { translate as t } from "@/i18n";
 

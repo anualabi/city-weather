@@ -13,7 +13,7 @@ import Constants from "expo-constants";
 
 import Icon from "../Icon/Icon";
 import PickerItem from "./PickerItem";
-import Text from "@/components/Text";
+import Text from "@/components/ui/Text";
 
 type item = { label: string; value: string };
 

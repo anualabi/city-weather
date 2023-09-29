@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { useNetInfo } from "@react-native-community/netinfo";
 
-import Text from "@/components/Text";
+import Text from "@/components/ui/Text";
 
 export interface OfflineNoticeProps {
   message?: string;

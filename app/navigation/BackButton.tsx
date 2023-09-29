@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import Icon from "@/components/Icon";
+import Icon from "@/components/ui/Icon";
 
 export const BackButton = () => {
   const navigation = useNavigation();
