@@ -32,7 +32,7 @@ The features implemented are as follows:
 - User should be able to click on a city and see the weather results on a separate screen.
 - User should see all the temperatures displayed in Celsius.
 - The application to be offline-first. The data must be fetched from the API and must be stored in a database. If there is no internet the data from the database must be used.
-- The application should only be optimized for mobile devices and in Portrait mode.
+- The application should only be optimised for mobile devices and in Portrait mode.
 
 ### How To Use
 
@@ -40,7 +40,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone the the private repository.
+$ git clone this private repository.
 
 # Install dependencies
 $ npm install
