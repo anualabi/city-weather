@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorMessage component should render correctly 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      },
+      undefined,
+    ]
+  }
+  testID="errorContainer"
+>
+  <Text
+    style={
+      [
+        {
+          "fontSize": 16,
+        },
+        [
+          {
+            "color": "red",
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    An error occurred
+  </Text>
+</View>
+`;

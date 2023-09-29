@@ -1,0 +1,49 @@
+import renderer from "react-test-renderer";
+import { fireEvent, render } from "@testing-library/react-native";
+import "@testing-library/jest-native/extend-expect";
+
+import ListItem, { ListItemProps } from "./ListItem";
+
+const customRender = (props: ListItemProps) => {
+  return render(<ListItem {...props} />);
+};
+
+describe("ListItem component", () => {
+  test("should render correctly", () => {
+    const tree = renderer.create(<ListItem title="Sample Title" />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test("should render the title", () => {
+    const { getByText } = customRender({ title: "Test Title" });
+    expect(getByText("Test Title")).toBeTruthy();
+  });
+
+  test("should render secondary title when provided", () => {
+    const { getByText } = customRender({
+      title: "Test Title",
+      title2: "Test Title 2",
+    });
+
+    expect(getByText("Test Title 2")).toBeTruthy();
+  });
+
+  test("should call onPress when pressed", () => {
+    const onPressMock = jest.fn();
+    const { getByRole } = customRender({
+      title: "Test Title",
+      onPress: onPressMock,
+    });
+    fireEvent.press(getByRole("button"));
+    expect(onPressMock).toHaveBeenCalled();
+  });
+
+  test("should render image when provided", () => {
+    const { getByTestId } = customRender({
+      title: "Test Title",
+      image: "https://example.com/image.png",
+    });
+    const image = getByTestId("list-item-image");
+    expect(image.props.source.uri).toBe("https://example.com/image.png");
+  });
+});

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader component should render correctly 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+  testID="loader"
+>
+  <ActivityIndicator
+    animating={false}
+    color="black"
+    size="large"
+    testID="activity-indicator"
+  />
+</View>
+`;
