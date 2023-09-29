@@ -1,9 +1,11 @@
 import { useCallback, useState } from "react";
-import { FlatList, ImageBackground, StyleSheet } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 
 import { AppStackScreenProps } from "@/navigation/AppNavigator";
+import { colors } from "@/theme";
 import ErrorMessage from "@/components/ui/ErrorMessage";
-import ListItem from "@/components/ui/ListItem";
+import Icon from "@/components/ui/Icon";
+import { ListItem, ListItemSeparator } from "@/components/ui/ListItem";
 import Loader from "@/components/ui/Loader";
 import { translate as t } from "@/i18n";
 import { useCities } from "@/hooks/useWeather";
@@ -27,32 +29,33 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
   if (isError) return <ErrorMessage message={t("homeScreen.errorMessage")} />;
 
   return (
-    <ImageBackground
-      blurRadius={3}
-      source={require("@/assets/weather.png")}
-      style={styles.imageContainer}
-    >
+    <View style={styles.container}>
       <FlatList
         data={data}
         keyExtractor={(item) => item.name}
+        ItemSeparatorComponent={() => <ListItemSeparator />}
         onRefresh={onRefresh}
         refreshing={refreshing}
         renderItem={({ item }) => (
           <ListItem
-            image={item.picture}
             onPress={() => navigation.navigate("CityDetails", item)}
-            showChevron
+            rightIcon={
+              <Icon
+                onPress={() => navigation.navigate("CityDetails", item)}
+                name="chevron-right"
+              />
+            }
             title={item.name}
           />
         )}
       />
-    </ImageBackground>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  imageContainer: {
+  container: {
+    backgroundColor: colors.bgWhite,
     flex: 1,
   },
-  subtitle: { fontWeight: "bold", textAlign: "center", marginTop: 5 },
 });

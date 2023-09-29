@@ -8,6 +8,7 @@ import {
   TextStyle,
 } from "react-native";
 
+import { colors } from "@/theme";
 import { translate, TxKeyPath } from "@/i18n";
 
 export interface TextProps extends RNTextProps {
@@ -32,7 +33,7 @@ const Text = forwardRef<RNText, TextProps>(function Text(props, ref) {
 });
 
 const styles = StyleSheet.create({
-  text: { fontSize: 16 },
+  text: { color: colors.text, fontSize: 16 },
 });
 
 export default Text;

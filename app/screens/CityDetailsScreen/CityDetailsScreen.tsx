@@ -1,10 +1,11 @@
 import { useLayoutEffect } from "react";
-import { StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import { Image } from "expo-image";
 
 import { AppStackScreenProps } from "@/navigation/AppNavigator";
+import { colors } from "@/theme";
 import ErrorMessage from "@/components/ui/ErrorMessage";
-import ListItem from "@/components/ui/ListItem";
+import { ListItem, ListItemSeparator } from "@/components/ui/ListItem";
 import Loader from "@/components/ui/Loader";
 import Text from "@/components/ui/Text";
 import { translate as t } from "@/i18n";
@@ -33,7 +34,7 @@ export default function CityDetailsScreen({
   const { temperatures } = data[0];
 
   return (
-    <View>
+    <View style={styles.container}>
       <Image
         cachePolicy="memory-disk"
         contentFit="cover"
@@ -42,23 +43,30 @@ export default function CityDetailsScreen({
       />
       <View style={styles.content}>
         <Text style={styles.heading} tx="cityDetailsScreen.heading" />
-        {temperatures.map(({ time, degrees }) => (
-          <ListItem key={time} title={time} title2={degrees} />
-        ))}
+        <FlatList
+          data={temperatures}
+          keyExtractor={(item) => item.time}
+          ItemSeparatorComponent={() => <ListItemSeparator />}
+          renderItem={({ item }) => (
+            <ListItem title={item.time} title2={item.degrees} />
+          )}
+        />
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: { backgroundColor: colors.bgWhite, flex: 1 },
   content: {
-    padding: 15,
+    margin: 15,
   },
   heading: {
     fontSize: 20,
     fontWeight: "bold",
     lineHeight: 28,
     marginBottom: 10,
+    padding: 15,
   },
   image: {
     height: 150,

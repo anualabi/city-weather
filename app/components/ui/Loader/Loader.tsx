@@ -5,6 +5,8 @@ import {
   View,
 } from "react-native";
 
+import { colors } from "@/theme";
+
 export interface LoaderProps extends ActivityIndicatorProps {
   animating: boolean;
   color?: string;
@@ -13,7 +15,7 @@ export interface LoaderProps extends ActivityIndicatorProps {
 
 export default function Loader({
   animating,
-  color = "black",
+  color = colors.bgBlack,
   size = "large",
   ...props
 }: LoaderProps) {

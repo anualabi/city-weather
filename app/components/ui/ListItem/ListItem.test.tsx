@@ -2,7 +2,7 @@ import renderer from "react-test-renderer";
 import { fireEvent, render } from "@testing-library/react-native";
 import "@testing-library/jest-native/extend-expect";
 
-import ListItem, { ListItemProps } from "./ListItem";
+import { ListItem, ListItemProps } from "./ListItem";
 
 const customRender = (props: ListItemProps) => {
   return render(<ListItem {...props} />);
@@ -36,14 +36,5 @@ describe("ListItem component", () => {
     });
     fireEvent.press(getByRole("button"));
     expect(onPressMock).toHaveBeenCalled();
-  });
-
-  test("should render image when provided", () => {
-    const { getByTestId } = customRender({
-      title: "Test Title",
-      image: "https://example.com/image.png",
-    });
-    const image = getByTestId("list-item-image");
-    expect(image.props.source.uri).toBe("https://example.com/image.png");
   });
 });

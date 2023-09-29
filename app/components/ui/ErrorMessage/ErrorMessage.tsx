@@ -6,6 +6,7 @@ import {
   ViewStyle,
 } from "react-native";
 
+import { colors } from "@/theme";
 import Text from "@/components/ui/Text";
 
 export interface ErrorMessageProps {
@@ -37,5 +38,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 10,
   },
-  text: { color: "red", fontSize: 18, lineHeight: 28, textAlign: "center" },
+  text: {
+    color: colors.error,
+    fontSize: 18,
+    lineHeight: 28,
+    textAlign: "center",
+  },
 });

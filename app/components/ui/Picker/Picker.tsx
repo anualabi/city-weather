@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import Constants from "expo-constants";
 
+import { colors } from "@/theme";
 import Icon from "../Icon/Icon";
 import PickerItem from "./PickerItem";
 import Text from "@/components/ui/Text";
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     paddingTop: Constants.statusBarHeight,
   },
-  placeholder: { color: "black", flex: 1 },
+  placeholder: { color: colors.text, flex: 1 },
   text: {
     color: "black",
     flex: 1,

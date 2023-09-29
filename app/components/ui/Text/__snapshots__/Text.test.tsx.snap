@@ -5,6 +5,7 @@ exports[`Text component should render correctly 1`] = `
   style={
     [
       {
+        "color": "#343434",
         "fontSize": 16,
       },
       undefined,

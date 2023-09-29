@@ -8,14 +8,12 @@ import {
   ViewStyle,
 } from "react-native";
 
-import Icon from "@/components/ui/Icon";
+import { colors } from "@/theme";
 import Text from "@/components/ui/Text";
 
 export interface ListItemProps {
-  iconColor?: string;
-  iconSize?: number;
-  image?: string;
   onPress?: () => void;
+  rightIcon?: React.ReactNode;
   showChevron?: boolean;
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
@@ -23,12 +21,9 @@ export interface ListItemProps {
   title2?: string | number;
 }
 
-export default function ListItem({
-  iconColor = "black",
-  iconSize = 35,
-  image,
+export function ListItem({
   onPress,
-  showChevron,
+  rightIcon,
   style,
   textStyle,
   title,
@@ -40,27 +35,11 @@ export default function ListItem({
       onPress={onPress}
       style={[styles.container, style]}
     >
-      {image && (
-        <Image
-          accessible
-          accessibilityLabel="List item image"
-          style={styles.image}
-          source={{ uri: image }}
-          testID="list-item-image"
-        />
-      )}
       <View style={styles.title}>
         <Text style={[styles.text, textStyle]}>{title}</Text>
         {title2 && <Text style={[styles.text, textStyle]}>{title2}</Text>}
       </View>
-      {showChevron && (
-        <Icon
-          name="chevron-right"
-          size={iconSize}
-          color={iconColor}
-          testID="chevron-icon"
-        />
-      )}
+      {rightIcon}
     </Pressable>
   );
 }
@@ -68,16 +47,10 @@ export default function ListItem({
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    backgroundColor: "white",
+    backgroundColor: colors.bgWhite,
     flexDirection: "row",
-    opacity: 0.8,
-    padding: 10,
-    marginVertical: 8,
-  },
-  image: {
-    height: 50,
-    marginRight: 10,
-    width: 50,
+    paddingHorizontal: 20,
+    paddingVertical: 20,
   },
   text: { fontSize: 18, fontWeight: "bold" },
   title: {

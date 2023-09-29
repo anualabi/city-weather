@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { useNetInfo } from "@react-native-community/netinfo";
 
+import { colors } from "@/theme";
 import Text from "@/components/ui/Text";
 
 export interface OfflineNoticeProps {
@@ -41,7 +42,7 @@ export default function OfflineNotice({
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    backgroundColor: "black",
+    backgroundColor: colors.bgBlack,
     bottom: 0,
     elevation: Platform.OS === "android" ? 1 : 0,
     height: 40,
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   text: {
-    color: "white",
+    color: colors.textWhite,
     fontSize: 14,
   },
 });

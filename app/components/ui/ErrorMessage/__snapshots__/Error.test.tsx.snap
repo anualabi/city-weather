@@ -19,11 +19,12 @@ exports[`ErrorMessage component should render correctly 1`] = `
     style={
       [
         {
+          "color": "#343434",
           "fontSize": 16,
         },
         [
           {
-            "color": "red",
+            "color": "#C03403",
             "fontSize": 18,
             "lineHeight": 28,
             "textAlign": "center",

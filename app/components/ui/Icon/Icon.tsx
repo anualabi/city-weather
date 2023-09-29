@@ -1,6 +1,7 @@
 import { Pressable, ViewStyle } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+import { colors } from "@/theme";
 import { IconName } from "@/types";
 
 export interface IconProps {
@@ -12,7 +13,7 @@ export interface IconProps {
 }
 
 export default function Icon({
-  color = "black",
+  color = colors.bgBlack,
   onPress,
   name,
   size = 40,
