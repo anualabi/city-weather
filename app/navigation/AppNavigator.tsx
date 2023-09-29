@@ -4,7 +4,7 @@ import {
   createNativeStackNavigator,
 } from "@react-navigation/native-stack";
 
-import CitiesScreen from "@/screens/HomeScreen";
+import HomeScreen from "@/screens/HomeScreen";
 import CityDetailsScreen from "@/screens/CityDetailsScreen";
 import Icon from "@/components/Icon";
 import SettingsScreen from "@/screens/SettingsScreen";
@@ -66,11 +66,11 @@ export default function AppNavigator() {
       >
         <Stack.Screen
           name="Cities"
-          component={CitiesScreen}
+          component={HomeScreen}
           options={({ navigation }) => ({
             headerLeft: undefined,
             headerRight: getSettingsIcon(navigation),
-            headerTitle: t("citiesScreen.headerTitle"),
+            headerTitle: t("homeScreen.headerTitle"),
           })}
         />
         <Stack.Screen name="CityDetails" component={CityDetailsScreen} />

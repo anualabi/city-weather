@@ -36,7 +36,7 @@ export default function Icon({
         color={color}
         name={name}
         size={size * 0.6}
-        testID={testID || "icon"}
+        testID={testID ?? "icon"}
       />
     </Pressable>
   );

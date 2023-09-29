@@ -1,5 +1,5 @@
 const de = {
-  citiesScreen: {
+  homeScreen: {
     headerTitle: "Städte",
     errorMessage:
       "Hoppla! Wir konnten die Liste der Städte nicht abrufen. Überprüfen Sie Ihre Verbindung oder aktualisieren Sie sie.",

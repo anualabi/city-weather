@@ -22,7 +22,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
 
   if (isLoading) return <Loader animating={isLoading} />;
 
-  if (isError) return <ErrorMessage message={t("citiesScreen.errorMessage")} />;
+  if (isError) return <ErrorMessage message={t("homeScreen.errorMessage")} />;
 
   return (
     <ImageBackground

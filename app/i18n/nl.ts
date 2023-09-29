@@ -1,5 +1,5 @@
 const nl = {
-  citiesScreen: {
+  homeScreen: {
     headerTitle: "Steden",
     errorMessage:
       "Oeps! We kunnen de lijst met steden niet ophalen. Controleer uw verbinding of vernieuw.",

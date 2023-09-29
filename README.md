@@ -11,7 +11,7 @@
 
 ### Overview
 
-![screenshot](https://github.com/anualabi/weather-demo/assets/33486765/5953e4ca-f0de-4e93-bbab-06538b432f09)
+![screenshot](https://github.com/anualabi/weather-demo/assets/33486765/f6bc7009-961f-43ba-b1ca-d1a232a2ed92)
 
 ### Built With
 

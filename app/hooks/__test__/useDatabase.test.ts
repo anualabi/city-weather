@@ -38,7 +38,7 @@ describe("useDatabase", () => {
     const error = new Error("An error occurred");
     (AsyncStorage.getItem as jest.Mock).mockRejectedValue(error);
 
-    const { result, waitForNextUpdate } = renderHook(() => useDatabase());
+    const { result } = renderHook(() => useDatabase());
 
     let response;
     await act(async () => {

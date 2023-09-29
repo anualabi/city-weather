@@ -1,5 +1,5 @@
 const en = {
-  citiesScreen: {
+  homeScreen: {
     headerTitle: "Cities",
     errorMessage:
       "Oops! We couldn't retrieve the list of cities. Check your connection or refresh.",
