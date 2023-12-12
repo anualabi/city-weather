@@ -1,24 +1,11 @@
 import { CityData, WeatherData } from "@/types";
+import _ from "lodash";
 
 export function getUniqueSortedCities(apiResponse: WeatherData[]): CityData[] {
-  if (!apiResponse || apiResponse.length === 0) {
-    return [];
-  }
-
-  const cityMap = new Map<string, string>();
-
-  for (const entry of apiResponse) {
-    if (entry?.city && entry.city.name && entry.city.picture) {
-      cityMap.set(entry.city.name, entry.city.picture);
-    }
-  }
-
-  const sortedCitiesArray = Array.from(cityMap, ([name, picture]) => ({
-    name,
-    picture,
-  }));
-
-  sortedCitiesArray.sort((a, b) => a.name.localeCompare(b.name));
-
-  return sortedCitiesArray;
+  return _.chain(apiResponse)
+    .filter((entry) => !!entry?.city?.name && !!entry.city.picture)
+    .uniqBy((entry) => entry.city.name)
+    .map((entry) => ({ name: entry.city.name, picture: entry.city.picture }))
+    .sortBy("name")
+    .value();
 }
