@@ -1,4 +1,4 @@
-import { act, renderHook } from "@testing-library/react-hooks";
+import { act, renderHook } from "@testing-library/react-native";
 import { useDatabase } from "../useDatabase";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
