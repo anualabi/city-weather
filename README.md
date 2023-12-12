@@ -1,5 +1,7 @@
 <h1 align="center">Weather App</h1>
 
+The Weather App is a mobile application that provides weather updates for cities worldwide. Designed to be user-friendly and efficient, it offers an offline-first approach, ensuring access to weather data even without an internet connection.
+
 <!-- TABLE OF CONTENTS -->
 
 ## Table of Contents
@@ -11,28 +13,26 @@
 
 ### Overview
 
-![screenshot](https://github.com/anualabi/weather-demo/assets/33486765/f6bc7009-961f-43ba-b1ca-d1a232a2ed92)
+![Weather App Demo](https://github.com/anualabi/city-weather/assets/33486765/2511a0e0-0a15-4641-af1f-bf9117f892fc)
 
 ### Built With
 
-- [React](https://react.dev/)
-- [React Native](https://reactnative.dev/)
-- [Expo](https://expo.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Axios](https://axios-http.com/docs/intro)
-- [React Query](https://tanstack.com/query/latest)
+- [React](https://react.dev/): A JavaScript library for building user interfaces.
+- [React Native](https://reactnative.dev/): A framework for building native apps using React.
+- [Expo](https://expo.dev/): An open-source platform for making universal native apps.
+- [TypeScript](https://www.typescriptlang.org/): A typed superset of JavaScript that compiles to plain JavaScript.
+- [Axios](https://axios-http.com/docs/intro): A promise-based HTTP client for the browser and node.js.
+- [React Query](https://tanstack.com/query/latest): A library for fetching, caching, and updating asynchronous data in React.
 
 ### Features
 
-The features implemented are as follows:
-
-- User can see a home screen with all the cities that are available on the API..
-- User can see the cities sorted alphabetically.
-- User should be able to refresh the data that is on the home screen.
-- User should be able to click on a city and see the weather results on a separate screen.
-- User should see all the temperatures displayed in Celsius.
-- The application to be offline-first. The data must be fetched from the API and must be stored in a database. If there is no internet the data from the database must be used.
-- The application should only be optimised for mobile devices and in Portrait mode.
+- Weather updates for cities worldwide.
+- Alphabetical sorting of cities for easier navigation.
+- Refresh functionality to update weather data.
+- Detailed weather information on a separate screen for each city.
+- Temperature readings in Celsius.
+- Offline-first functionality: Uses stored data when no internet is available.
+- Optimized for mobile devices in portrait mode.
 
 ### How To Use
 
