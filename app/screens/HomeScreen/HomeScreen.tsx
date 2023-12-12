@@ -8,7 +8,7 @@ import Icon from "@/components/ui/Icon";
 import { ListItem, ListItemSeparator } from "@/components/ui/ListItem";
 import Loader from "@/components/ui/Loader";
 import { translate as t } from "@/i18n";
-import { useCities } from "@/hooks/useWeather";
+import useCities from "@/hooks/useCities";
 
 interface HomeScreenProps extends AppStackScreenProps<"Home"> {}
 

@@ -1,14 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import { useNetInfo } from "@react-native-community/netinfo";
 
-import { CityData, FormattedWeatherData, WeatherData } from "@/types";
-import { getTemperatures, getUniqueSortedCities } from "@/utilities";
+import { CityData, WeatherData } from "@/types";
+import { getUniqueSortedCities } from "@/utilities";
 import { useDatabase } from "./useDatabase";
 import weatherService from "@/services/weatherService";
+import { WEATHER_DATA_KEY } from "@/constants/weather";
 
-const WEATHER_DATA_KEY = "@weather_data";
-
-export const useCities = () => {
+const useCities = () => {
   const { getData, storeData } = useDatabase();
   const { isInternetReachable } = useNetInfo();
 
@@ -44,19 +43,4 @@ export const useCities = () => {
   });
 };
 
-export const useCityDetails = (cityName: string) => {
-  const { getData } = useDatabase();
-
-  return useQuery<FormattedWeatherData[], Error>({
-    queryFn: async () => {
-      const response = await getData<WeatherData[]>(WEATHER_DATA_KEY);
-      const data = response.data;
-
-      if (!data) {
-        throw new Error("No data available.");
-      }
-      return getTemperatures(data, cityName);
-    },
-    queryKey: ["city", cityName],
-  });
-};
+export default useCities;

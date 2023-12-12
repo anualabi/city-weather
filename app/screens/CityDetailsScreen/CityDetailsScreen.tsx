@@ -9,7 +9,7 @@ import { ListItem, ListItemSeparator } from "@/components/ui/ListItem";
 import Loader from "@/components/ui/Loader";
 import Text from "@/components/ui/Text";
 import { translate as t } from "@/i18n";
-import { useCityDetails } from "@/hooks/useWeather";
+import useCity from "@/hooks/useCity";
 
 interface CityDetailsScreenProps extends AppStackScreenProps<"CityDetails"> {}
 
@@ -18,7 +18,7 @@ export default function CityDetailsScreen({
   route,
 }: CityDetailsScreenProps) {
   const { name, picture } = route.params;
-  const { data, isError, isLoading } = useCityDetails(name);
+  const { data, isError, isLoading } = useCity(name);
 
   useLayoutEffect(() => {
     navigation.setOptions({
