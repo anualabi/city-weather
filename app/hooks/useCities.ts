@@ -1,11 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
 import { useNetInfo } from "@react-native-community/netinfo";
+import { useQuery } from "@tanstack/react-query";
 
+import { WEATHER_DATA_KEY } from "@/constants/weather";
+import weatherService from "@/services/weatherService";
 import { CityData, WeatherData } from "@/types";
 import { getUniqueSortedCities } from "@/utilities";
 import { useDatabase } from "./useDatabase";
-import weatherService from "@/services/weatherService";
-import { WEATHER_DATA_KEY } from "@/constants/weather";
 
 const useCities = () => {
   const { getData, storeData } = useDatabase();

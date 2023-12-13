@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, StyleProp, TextStyle } from "react-native";
+import { Pressable, StyleProp, StyleSheet, TextStyle } from "react-native";
 
 import Text from "@/components/ui/Text";
 

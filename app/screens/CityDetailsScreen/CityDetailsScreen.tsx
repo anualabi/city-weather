@@ -1,15 +1,15 @@
+import { Image } from "expo-image";
 import { useLayoutEffect } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
-import { Image } from "expo-image";
 
-import { AppStackScreenProps } from "@/navigation/AppNavigator";
-import { colors } from "@/theme";
 import ErrorMessage from "@/components/ui/ErrorMessage";
 import { ListItem, ListItemSeparator } from "@/components/ui/ListItem";
 import Loader from "@/components/ui/Loader";
 import Text from "@/components/ui/Text";
-import { translate as t } from "@/i18n";
 import useCity from "@/hooks/useCity";
+import { translate as t } from "@/i18n";
+import { AppStackScreenProps } from "@/navigation/AppNavigator";
+import { colors } from "@/theme";
 
 interface CityDetailsScreenProps extends AppStackScreenProps<"CityDetails"> {}
 

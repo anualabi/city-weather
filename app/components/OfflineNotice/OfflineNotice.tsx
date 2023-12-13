@@ -1,3 +1,4 @@
+import { useNetInfo } from "@react-native-community/netinfo";
 import {
   Platform,
   StyleProp,
@@ -6,10 +7,9 @@ import {
   View,
   ViewStyle,
 } from "react-native";
-import { useNetInfo } from "@react-native-community/netinfo";
 
-import { colors } from "@/theme";
 import Text from "@/components/ui/Text";
+import { colors } from "@/theme";
 
 export interface OfflineNoticeProps {
   message?: string;

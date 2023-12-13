@@ -1,5 +1,5 @@
-import { Pressable, ViewStyle } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Pressable, ViewStyle } from "react-native";
 
 import { colors } from "@/theme";
 import { IconName } from "@/types";

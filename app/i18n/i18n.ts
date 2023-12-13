@@ -1,9 +1,9 @@
 import * as Localization from "expo-localization";
 import i18n from "i18n-js";
 
+import de from "./de";
 import en, { Translations } from "./en";
 import nl from "./nl";
-import de from "./de";
 
 i18n.fallbacks = true;
 i18n.translations = { en, "en-US": en, "en-GB": en, nl, de };

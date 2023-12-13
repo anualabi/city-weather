@@ -1,6 +1,6 @@
-import renderer from "react-test-renderer";
-import { fireEvent, render } from "@testing-library/react-native";
 import "@testing-library/jest-native/extend-expect";
+import { fireEvent, render } from "@testing-library/react-native";
+import renderer from "react-test-renderer";
 
 import { ListItem, ListItemProps } from "./ListItem";
 

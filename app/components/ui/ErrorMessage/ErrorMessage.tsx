@@ -6,8 +6,8 @@ import {
   ViewStyle,
 } from "react-native";
 
-import { colors } from "@/theme";
 import Text from "@/components/ui/Text";
+import { colors } from "@/theme";
 
 export interface ErrorMessageProps {
   containerStyle?: StyleProp<ViewStyle>;

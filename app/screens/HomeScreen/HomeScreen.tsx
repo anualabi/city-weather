@@ -1,14 +1,14 @@
 import { useCallback, useState } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 
-import { AppStackScreenProps } from "@/navigation/AppNavigator";
-import { colors } from "@/theme";
 import ErrorMessage from "@/components/ui/ErrorMessage";
 import Icon from "@/components/ui/Icon";
 import { ListItem, ListItemSeparator } from "@/components/ui/ListItem";
 import Loader from "@/components/ui/Loader";
-import { translate as t } from "@/i18n";
 import useCities from "@/hooks/useCities";
+import { translate as t } from "@/i18n";
+import { AppStackScreenProps } from "@/navigation/AppNavigator";
+import { colors } from "@/theme";
 
 interface HomeScreenProps extends AppStackScreenProps<"Home"> {}
 

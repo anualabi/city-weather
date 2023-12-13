@@ -1,15 +1,15 @@
 import i18n from "i18n-js";
 import { forwardRef } from "react";
 import {
-  StyleProp,
-  StyleSheet,
   Text as RNText,
   TextProps as RNTextProps,
+  StyleProp,
+  StyleSheet,
   TextStyle,
 } from "react-native";
 
-import { colors } from "@/theme";
 import { translate, TxKeyPath } from "@/i18n";
+import { colors } from "@/theme";
 
 export interface TextProps extends RNTextProps {
   tx?: TxKeyPath;

@@ -2,12 +2,12 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StackScreenProps } from "@react-navigation/stack";
 
-import BackButton from "./BackButton";
+import Icon from "@/components/ui/Icon";
+import { translate as t } from "@/i18n";
 import CityDetailsScreen from "@/screens/CityDetailsScreen";
 import HomeScreen from "@/screens/HomeScreen";
-import Icon from "@/components/ui/Icon";
 import SettingsScreen from "@/screens/SettingsScreen";
-import { translate as t } from "@/i18n";
+import BackButton from "./BackButton";
 
 type AppStackParamList = {
   Home: undefined;

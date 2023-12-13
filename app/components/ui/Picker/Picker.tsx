@@ -1,20 +1,20 @@
+import Constants from "expo-constants";
 import { useState } from "react";
 import {
   FlatList,
-  StyleSheet,
-  StyleProp,
-  TextInputProps,
-  TextStyle,
   Modal,
   Pressable,
+  StyleProp,
+  StyleSheet,
+  TextInputProps,
+  TextStyle,
   View,
 } from "react-native";
-import Constants from "expo-constants";
 
+import Text from "@/components/ui/Text";
 import { colors } from "@/theme";
 import Icon from "../Icon/Icon";
 import PickerItem from "./PickerItem";
-import Text from "@/components/ui/Text";
 
 type item = { label: string; value: string };
 

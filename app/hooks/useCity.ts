@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 
+import { WEATHER_DATA_KEY } from "@/constants/weather";
 import { FormattedWeatherData, WeatherData } from "@/types";
 import { getTemperatures } from "@/utilities";
 import { useDatabase } from "./useDatabase";
-import { WEATHER_DATA_KEY } from "@/constants/weather";
 
 const useCity = (cityName: string) => {
   const { getData } = useDatabase();

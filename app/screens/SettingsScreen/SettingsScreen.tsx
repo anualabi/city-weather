@@ -1,11 +1,11 @@
 import { useEffect, useLayoutEffect } from "react";
 import { StyleSheet, View } from "react-native";
 
-import { AppStackScreenProps } from "@/navigation/AppNavigator";
 import LanguageSelector from "@/components/LanguageSelector";
 import Text from "@/components/ui/Text";
-import { translate as t } from "@/i18n";
 import { useTranslation } from "@/contexts/TranslationContext";
+import { translate as t } from "@/i18n";
+import { AppStackScreenProps } from "@/navigation/AppNavigator";
 
 interface SettingsScreenProps extends AppStackScreenProps<"Settings"> {}
 

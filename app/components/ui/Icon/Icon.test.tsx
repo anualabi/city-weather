@@ -1,9 +1,9 @@
-import renderer from "react-test-renderer";
 import "@testing-library/jest-native/extend-expect";
 import { fireEvent, render } from "@testing-library/react-native";
+import renderer from "react-test-renderer";
 
-import Icon, { IconProps } from "./Icon";
 import { IconName } from "@/types";
+import Icon, { IconProps } from "./Icon";
 
 const customRender = (props: IconProps) => {
   return render(<Icon {...props} />);

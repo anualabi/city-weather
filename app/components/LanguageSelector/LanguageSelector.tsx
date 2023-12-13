@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
-import { useTranslation } from "@/contexts/TranslationContext";
 import Picker from "@/components/ui/Picker";
+import { useTranslation } from "@/contexts/TranslationContext";
 
 const languages = [
   { label: "English", value: "en" },

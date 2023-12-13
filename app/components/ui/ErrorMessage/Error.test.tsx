@@ -1,6 +1,7 @@
-import renderer from "react-test-renderer";
-import { render } from "@testing-library/react-native";
 import "@testing-library/jest-native/extend-expect";
+import { render } from "@testing-library/react-native";
+import renderer from "react-test-renderer";
+
 import ErrorMessage, { ErrorMessageProps } from "./ErrorMessage";
 
 const customRender = (props: ErrorMessageProps) => {
