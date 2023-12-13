@@ -15,7 +15,7 @@ The Weather App is a mobile application that provides weather updates for cities
 
 <p align="center">
   <a href="https://github.com/anualabi/city-weather/assets/33486765/2511a0e0-0a15-4641-af1f-bf9117f892fc">
-    <img src="https://github.com/anualabi/city-weather/assets/33486765/5f34866d-0dcb-4530-9b34-87dfd0abd8c7" alt="Weather App Demo">
+    <img src="https://github.com/anualabi/city-weather/assets/33486765/5f34866d-0dcb-4530-9b34-87dfd0abd8c7" alt="Weather App Demo" width="667px">
   </a>
 </p>
 
@@ -44,7 +44,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone this private repository.
+$ git clone https://github.com/anualabi/city-weather
 
 # Install dependencies
 $ npm install
