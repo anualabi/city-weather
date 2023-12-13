@@ -37,7 +37,7 @@ The Weather App is a mobile application that provides weather updates for cities
 - Detailed weather information on a separate screen for each city.
 - Temperature readings in Celsius.
 - Offline-first functionality: Uses stored data when no internet is available.
-- Optimized for mobile devices in portrait mode.
+- Optimised for mobile devices in portrait mode.
 
 ### How To Use
 
