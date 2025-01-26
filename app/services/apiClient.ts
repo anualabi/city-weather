@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://us-central1-mobile-assignment-server.cloudfunctions.net",
+  baseURL: process.env.EXPO_PUBLIC_API_BASE_URL ?? "https://example.com/api",
 });
 
 class APIClient<T> {
